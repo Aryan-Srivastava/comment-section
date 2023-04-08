@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 73rem;
+  margin-top: 1.6rem;
+}
+
+.comment {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.comment-header img {
+  width: 3.2rem;
+  aspect-ratio: 1;
+}
+
+.you {
+  background: #5357b6;
+  color: white;
+  padding: 1px 6px 3px;
+  margin-left: -0.8rem;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.comment-header h5 {
+  line-height: 1.9rem;
+  font-weight: 500;
+  color: #334253;
+}
+
+.comment-footer .likes {
+  display: flex;
+  padding: 10px;
+  background: #f5f6fa;
+  border-radius: 10px;
+}
+
+.icon-plus,
+.icon-minus  {
+  background: #f5f6fa;
+  padding: 10px;
+}
+
+.comment-footer .like-count {
+  color: #5357b6;
+  font-weight: 500;
+}
+
+.comment-footer .reply-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.comment-footer .reply-btn button {
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+  color: #5357b6;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.comment-footer .reply-btn .delete-btn {
+  color: #ed6368;
+}
+
+.replies:nth-child(1) {
+  border-left: 2px solid #e9ebf0;
+  padding-left: 1.6rem;
+}
+
+@media screen and (min-width: 680px) {
+  .container {
+    margin-top: 2rem;
+  }
+
+  .comment {
+    padding: 2.4rem 2.4rem 2.4rem 8.8rem;
+    position: relative;
+    min-height: 14.6rem;
+  }
+
+  .comment-main {
+    margin: 1.5rem 0 0;
+  }
+
+  .comment-footer .likes {
+    position: absolute;
+    top: 2.4rem;
+    left: 2.4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 4rem;
+    height: 10rem;
+    padding: 1.19rem 0 1.5rem;
+  }
+
+  .reply-btn {
+    position: absolute;
+    top: 2.8rem;
+    right: 2.4rem;
+  }
+
+  .comment-footer .reply-btn button:hover,
+  .comment-footer .reply-btn button:hover img {
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,165 @@
+.reply-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 1.6rem;
+}
+
+.reply {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 64.2rem;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+}
+
+/* .comment-header img {
+  width: 3.2rem;
+} */
+
+.comment-header h5 {
+  line-height: 1.9rem;
+  font-weight: 500;
+  color: #334253;
+}
+
+.reply-main {
+  margin: 1.6rem 0;
+}
+
+.reply-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reply-footer .votes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f6fa;
+  border-radius: 10px;
+  width: 10rem;
+  height: 4rem;
+  padding: 0 1.56rem;
+}
+
+.reply-footer .like-count {
+  color: #5357b6;
+  font-weight: 500;
+  line-height: 1.9rem;
+}
+
+.reply-footer .reply-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.reply-footer .reply-button button {
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+  color: #5357b6;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.reply-footer .reply-text {
+  font-weight: 500;
+  color: #5357b6;
+}
+
+.replies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.replying-to {
+  color: #5357b6;
+  font-weight: 700;
+}
+
+textarea {
+  height: 9.6rem;
+}
+
+.edit-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+
+.update-btn {
+  background: #5357b6;
+  border-radius: 8px;
+  width: 10.4rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  padding: 1.2rem 0;
+}
+
+.reply-footer .reply-button .delete-btn {
+  color: #ed6368;
+}
+
+@media screen and (min-width: 680px) {
+  .reply-container {
+    margin-top: 2rem;
+  }
+
+  .reply {
+    padding: 2.4rem 2.4rem 2.4rem 8.8rem;
+    position: relative;
+    min-height: 14.6rem;
+  }
+
+  .reply-main {
+    margin: 1.5rem 0 0;
+  }
+
+  .reply-footer .votes {
+    position: absolute;
+    top: 2.4rem;
+    left: 2.4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 4rem;
+    height: 10rem;
+    padding: 1.19rem 0 1.5rem;
+  }
+
+  .reply-button {
+    position: absolute;
+    top: 2.8rem;
+    right: 2.4rem;
+  }
+
+  .reply-footer .reply-button {
+    gap: 2rem;
+  }
+
+  .reply-footer .reply-button button:hover,
+  .reply-footer .reply-button button:hover img {
+    opacity: 0.7;
+  }
+
+  .update-btn:hover {
+    opacity: 0.7;
+  }
+}
