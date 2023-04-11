@@ -15,7 +15,7 @@ function Replies({
 }) {
 	const { user, content, createdAt, replyingTo } = reply;
 	const isCurrentUser = currentUser.username === user.username;
-	const [currScore, setCurrScore] = useState(score)
+	const [currScore, setCurrScore] = useState(score);
 
 	const [editing, setEditing] = useState(false);
 	const [showReply, setShowReply] = useState(false);
@@ -25,11 +25,13 @@ function Replies({
 
 	const onUpdateReply = () => {
 		let newContent = contentReply.replace(`@${replyingTo},`, "");
-		if(newContent === content) 
+		newContent = newContent.trim();
+		if (newContent === "" || newContent === content) {
 			return;
+		}
 		editComment(newContent, reply.id);
-		setCurrScore(0);
 		setEditing(false);
+		setCurrScore(0);
 	};
 
 	return (
