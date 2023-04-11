@@ -118,7 +118,7 @@ function App() {
 				if (comment.id === parentId) {
 					return {
 						...comment,
-						replies: [...comment.replies, newReply],
+						replies: [newReply, ...comment.replies],
 					};
 				}
 				return comment;
@@ -126,7 +126,7 @@ function App() {
 			return { ...prevData, comments: updatedComments };
 		});
 	};
-
+	
 	return (
 		<div className="App">
 			{datas.comments.map((comment) => (
@@ -140,6 +140,7 @@ function App() {
 					onModal={() => handleShowModal(comment.id)}
 					editComment={editComment}
 					addNewReply={handleNewReply}
+					noOfReplies={comment.replies.length}
 				>
 					<div className="replies">
 						{comment.replies.map((reply) => (

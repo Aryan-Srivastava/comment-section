@@ -15,6 +15,7 @@ function Replies({
 }) {
 	const { user, content, createdAt, replyingTo } = reply;
 	const isCurrentUser = currentUser.username === user.username;
+	const [currScore, setCurrScore] = useState(score)
 
 	const [editing, setEditing] = useState(false);
 	const [showReply, setShowReply] = useState(false);
@@ -24,7 +25,10 @@ function Replies({
 
 	const onUpdateReply = () => {
 		let newContent = contentReply.replace(`@${replyingTo},`, "");
+		if(newContent === content) 
+			return;
 		editComment(newContent, reply.id);
+		setCurrScore(0);
 		setEditing(false);
 	};
 
@@ -80,7 +84,7 @@ function Replies({
 									className="icon-plus"
 								/>
 							</button>
-							<span className="like-count">{score}</span>
+							<span className="like-count">{currScore}</span>
 							<button onClick={onMinusScore}>
 								<img
 									src="../src/assets/icon-minus.svg"

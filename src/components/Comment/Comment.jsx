@@ -12,6 +12,7 @@ function Comment({
 	onModal,
 	editComment,
 	addNewReply,
+	noOfReplies,
 }) {
 	const { user, content, createdAt } = comment;
 	const isCurrentUser = currentUser.username === user.username;
@@ -28,7 +29,8 @@ function Comment({
 	// const incScore = () => {
 	// 	return score > 0 ? "hsl(142, 79%, 45%)" : "hsl(10, 95%, 60%)";
 	// };
-
+	// console.log(noOfReplies);
+	// console.log(comment);
 	return (
 		<div className="container">
 			<div className="comment">
@@ -42,6 +44,9 @@ function Comment({
 						<h5 className="name">{user.username}</h5>
 						{isCurrentUser && <div className="you">you</div>}
 						<div className="date">{createdAt}</div>
+						<div className="numberOfReplies">
+							{noOfReplies} replies
+						</div>
 					</div>
 
 					<div className="comment-main">
