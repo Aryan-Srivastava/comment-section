@@ -108,6 +108,8 @@ function App() {
 	};
 
 	const handleNewReply = (newReply, parentId) => {
+		// do not allow empty replies
+		if (newReply.content.trim() === "") return;
 		setScores([...scores, { id: newReply.id, score: newReply.score }]);
 		setInitialScores([
 			...scores,
@@ -126,7 +128,7 @@ function App() {
 			return { ...prevData, comments: updatedComments };
 		});
 	};
-	
+
 	return (
 		<div className="App">
 			{datas.comments.map((comment) => (
