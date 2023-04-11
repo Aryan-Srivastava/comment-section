@@ -19,6 +19,10 @@ function AddComment({ addNewComment, currentUser }) {
       },
       replies: [],
     };
+    // do not add empty comment
+    if (comment.trim() === "") {
+      return;
+    }
     addNewComment(newComment);
     setComment("");
   };

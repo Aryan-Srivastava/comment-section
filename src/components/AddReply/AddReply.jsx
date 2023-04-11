@@ -26,6 +26,10 @@ function AddReply({
         username: currentUser.username,
       },
     };
+    // do not add empty reply
+    if (newContentReply.trim() === "") {
+      return;
+    }
     setReply("@username ");
     addNewReply(newReply, parent.id);
     setShowReply(!showReply);
