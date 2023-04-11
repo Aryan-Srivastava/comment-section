@@ -31,6 +31,16 @@ function App() {
 			// (currentScore === 0 && value === -1)
 		)
 			return;
+		if(value === 0) {
+			setScores((prevScore) =>
+				prevScore.map((scoreObj) =>
+					scoreObj.id === id
+						? { id, score: value }
+						: scoreObj
+				)
+			);
+			return;
+		}
 		setScores((prevScore) =>
 			prevScore.map((scoreObj) =>
 				scoreObj.id === id
@@ -93,6 +103,7 @@ function App() {
 			});
 			return { ...prevData, comments: updatedComments };
 		});
+		handleScoreChange(id, 0);
 	};
 
 	const handleNewComment = (newComment) => {
